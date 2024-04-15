@@ -50,16 +50,16 @@ export const searchCardData = [
   {
     title: 'StarBucks',
     image: brand2,
-    address: 'Karlsplatz 10, 80335 Munchen, Germany',
+    address: 'Karlsplatz 10, 80335 Munchen',
   },
   {
     title: 'Burger King',
     image: brand3,
-    address: '1234 Main St, San Francisco, CA 94103',
+    address: '1234 Main St, San Francisco',
   },
   {
     title: 'Wendys',
     image: brand4,
-    address: 'Leipziger pl, 12-13 10117 Berlin, Germany',
+    address: 'Leipziger pl, 12-13 10117 Berlin',
   },
 ];
