@@ -16,8 +16,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 import EventCard from '../components/EventCard';
 import { eventCardData } from '../data/dummyData';
 import { NavigationProp } from '@react-navigation/native';
+import { NavigationType } from '../type';
 
-const Home = ({ navigation }: { navigation: NavigationProp<any> }) => {
+const Home = ({ navigation }: { navigation: NavigationType }) => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
@@ -60,7 +61,9 @@ const Home = ({ navigation }: { navigation: NavigationProp<any> }) => {
       <ScrollView style={styles.events}>
         <View style={styles.eventsHead}>
           <Text style={styles.eventTitle}>Your Events</Text>
-          <Text style={styles.eventLink}>See all</Text>
+          <Text onPress={() => navigation.navigate('AllEvents')} style={styles.eventLink}>
+            See all
+          </Text>
         </View>
 
         {/* cards start here  */}

@@ -1,65 +1,40 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Platform } from 'react-native';
-import Home from '../screens/Home';
-import { MaterialIcons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
-import Music from '../screens/Music';
-import Profile from '../screens/Profile';
+import { createStackNavigator } from '@react-navigation/stack';
+import Search from '../screens/Search';
+import HomeViewStack from './HomeViewStack';
+import AllEvents from '../screens/AllEvents';
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const AppStack = () => {
   return (
-    <Tab.Navigator
+    <Stack.Navigator
       screenOptions={{
-        tabBarActiveTintColor: '#e03186',
-        tabBarInactiveTintColor: 'black',
-        // @ts-ignore
-        tabBarItemStyle: {
-          paddingBottom: Platform.OS === 'android' && 8,
-        },
-        tabBarStyle: {
-          padding: 10,
-          height: Platform.OS === 'android' ? 70 : 90,
-        },
-        tabBarLabelStyle: {
-          fontSize: 12,
-          fontFamily: 'Roboto_500Medium',
-        },
+        animationEnabled: false,
       }}
     >
-      <Tab.Screen
-        name="Event"
-        component={Home}
+      <Stack.Screen
+        name="Home"
+        component={HomeViewStack}
         options={{
           headerShown: false,
-          tabBarIcon: ({ color, size, focused }) => (
-            <MaterialIcons name="event-note" size={size} color={focused ? '#e03186' : 'black'} />
-          ),
-          tabBarLabel: 'Events',
         }}
       />
-      <Tab.Screen
-        name="Music"
-        component={Music}
+      <Stack.Screen
+        name="Search"
+        component={Search}
         options={{
-          headerShown: false,
-          tabBarIcon: ({ color, size, focused }) => (
-            <MaterialIcons name="queue-music" size={size} color={focused ? '#e03186' : 'black'} />
-          ),
+          title: 'Choose a place',
         }}
       />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
+      <Stack.Screen
+        name="AllEvents"
+        component={AllEvents}
         options={{
+          title: 'Your Events',
           headerShown: false,
-          tabBarIcon: ({ color, size, focused }) => (
-            <FontAwesome name="user-circle-o" size={size} color={focused ? '#e03186' : 'black'} />
-          ),
         }}
       />
-    </Tab.Navigator>
+    </Stack.Navigator>
   );
 };
 

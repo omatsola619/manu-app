@@ -39,6 +39,10 @@ export const eventCardData = [
     title: '',
     image: art7,
   },
+  {
+    title: '',
+    image: art2,
+  },
 ];
 
 export const searchCardData = [

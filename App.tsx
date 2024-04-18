@@ -12,9 +12,9 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { PaperProvider } from 'react-native-paper';
-import HomeViewStack from './navigation/HomeViewStack';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
+import AppStack from './navigation/AppStack';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -43,7 +43,7 @@ export default function App() {
     <NavigationContainer>
       <SafeAreaProvider onLayout={onLayoutRootView}>
         <PaperProvider>
-          <HomeViewStack />
+          <AppStack />
         </PaperProvider>
         <StatusBar style="auto" />
       </SafeAreaProvider>
